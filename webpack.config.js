@@ -28,7 +28,7 @@ module.exports={
     ]
   },
   plugins: [
-    // MiniCssExtractPlugin不支持热更新，可以设置环境变量，让开发环境不使用这个plugin
+    // MiniCssExtractPlugin不支持热更新，需要手动刷新，可以设置环境变量，让开发环境不使用这个plugin
     new MiniCssExtractPlugin({
       // 输出路径
       filename: isEnvProduction ? './style/[name].css' : './style/[name].[hash].css',
