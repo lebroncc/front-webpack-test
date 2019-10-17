@@ -50,9 +50,10 @@ npm init
 + webpack.config.v2.js，将js，css独立打包
 > 安装css独立打包插件
 > yarn add --dev extract-text-webpack-plugin
+
 >> 出现警告：warning extract-text-webpack-plugin@3.0.2: Deprecated. Please use https://github.com/webpack-contrib/mini-css-extract-plugin
 >> yarn remove mini-css-extract-plugin
->> extract-text-webpack-plugin插件提取单独打包css文件时，报错，插件要依赖webpack3的版本
+>> extract-text-webpack-plugin插件提取单独打包css文件时，报错，插件依赖webpack3的版本
 
 > webpack4得使用mini-css-extract-plugin这个插件来单独打包css
 > yarn add --dev mini-css-extract-plugin
@@ -69,11 +70,10 @@ npm init
 
 
 
-
 ##### 参考
-[使用webpack构建react项目](https://mp.weixin.qq.com/s/eTQbgX8C3pFOTpbpHoWkHQ)
-[webpack4.x详细配置](https://www.jianshu.com/p/6712e4e4b8fe)
-[webpack4.x独立打包js，css](https://www.jianshu.com/p/7b9b86b9366b)
+1. [使用webpack构建react项目](https://mp.weixin.qq.com/s/eTQbgX8C3pFOTpbpHoWkHQ)
+2. [webpack4.x详细配置](https://www.jianshu.com/p/6712e4e4b8fe)
+3. [webpack4.x独立打包js，css](https://www.jianshu.com/p/7b9b86b9366b)
 
 + webpack4.x独立打包css
 [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin)
