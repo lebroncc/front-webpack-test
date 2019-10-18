@@ -14,18 +14,6 @@ const baseConfig={
     // path: path.resolve(process.cwd(), 'build'),
     filename: './js/bundle.[hash].js'
   },
-  devServer: {
-    contentBase: path.join(__dirname, "src"),
-    hot: true,  // 热加载，可省略在package.json中配置
-    compress: false,  // 一切服务都启用gzip 压缩：
-    // historyApiFallback: true,
-    open: true, // 自动打开浏览器，可省略在package.json中配置
-    host: '127.0.0.1',
-    port: '3030',
-    stats: { colors: true },
-    // filename: '[name].chunk.js',
-    // headers: { 'Access-Control-Allow-Origin': '*' }
-  },
   module: {
     rules: [
       {
@@ -63,7 +51,7 @@ if(isEnvProduction){
       filename: isEnvProduction ? './style/[name].[hash].css' : '[name].css'
     })
   );
-  // 每次打包之前清理打包目录
+  // 每次打包之前清理打包目
   baseConfig.plugins.push(new CleanWebpackPlugin())
 }
 

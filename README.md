@@ -26,9 +26,9 @@ npm init
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-react": "^7.6.3",
     "babel-loader": "^8.0.6",
-    "css-loader": "^3.2.0",
+    "css-loader": "^3.2.0", // 解析css，在css内部遇到@import即引入
     "html-webpack-plugin": "^3.2.0",
-    "style-loader": "^1.0.0",
+    "style-loader": "^1.0.0", // 插入css到index.html的head标签内
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.8.2"
@@ -64,11 +64,24 @@ npm init
 ```javascript
 "scripts": {
   "start": "webpack-dev-server --mode development --open --hot",
-  "build": "webpack --mode production"
+  -"build": "webpack --mode production",
+  +"build": "cross-env NODE_ENV=production webpack --mode production"
 }
 ```
 
+##### webpack其他插件配置
+1. 清理旧的编译文件
+> yarn add --dev clean-webpack-plugin
 
+2. 配置webpack.config.js所需编译的环境
+> ```javascript
+> const isEnvProduction = process.env.NODE_ENV === 'production';
+> ```
+> + 需要yarn add --dev cross-env，
+> + 在package.json的scripts执行命令前 添加 cross-env NODE_ENV=production
+> ```javascript
+> "build": "cross-env NODE_ENV=production webpack --mode production",
+> ```
 
 ##### 参考
 1. [使用webpack构建react项目](https://mp.weixin.qq.com/s/eTQbgX8C3pFOTpbpHoWkHQ)
