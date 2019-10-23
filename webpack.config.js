@@ -8,6 +8,9 @@ const isEnvProduction = process.env.NODE_ENV === 'production';
 const baseConfig={
   // 指定mode，在src/*.js文件中内部使用process.env.NODE_ENV时，可获取初始值而不是undefined
   mode: isEnvProduction ? 'production' : 'development',
+  // 在使用 uglifyjs-webpack-plugin 时，你必须提供 sourceMap：true 选项来启用 source map 支持。
+  // 调试时启动源码调试
+  devtool: isEnvProduction ? 'source-map' : 'cheap-module-source-map',
   entry: ['./src/index.js'],
   output: {
     path: path.resolve(__dirname, 'build'),
@@ -19,12 +22,27 @@ const baseConfig={
     hot: true,  // 热加载，可省略在package.json中配置
     compress: false,  // 一切服务都启用gzip 压缩：
     // historyApiFallback: true,
-    open: true, // 自动打开浏览器，可省略在package.json中配置
+    open: true,
     host: '127.0.0.1',
     port: '3030',
     stats: { colors: true },
     // filename: '[name].chunk.js',
-    // headers: { 'Access-Control-Allow-Origin': '*' }
+    // headers: { 'Access-Control-Allow-Origin': '*' },
+    // webpack-dev-server使用http-proxy-middleware来实现跨域代理
+    proxy: {
+      // '/api': {
+      //   target: 'http://127.0.0.1',
+      //   pathRewrite: {'^/api' : 'csm/api'},
+      //   // changeOrigin: true,     // target是域名的话，需要这个参数，
+      //   // secure: false,          // 设置支持https协议的代理
+      // }
+      '/api': {
+        target: 'http://127.0.0.1:8000',
+        pathRewrite: {'^/api' : ''},
+        // changeOrigin: true,     // target是域名的话，需要这个参数，
+        // secure: false,          // 设置支持https协议的代理
+      }
+    }
   },
   module: {
     rules: [
