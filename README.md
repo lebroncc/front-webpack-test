@@ -4,6 +4,7 @@
 + 使用yarn add安装管理包相比npm更快
 + yarn add 包名，添加到dependencies
 + yarn add --dev 报名，添加到devDependencies
++ yarn install 根据package.json初始化项目
 
 ##### 初始化package.json
 npm init
@@ -91,3 +92,9 @@ npm init
 + webpack4.x独立打包css
 [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin)
 
+
+##### ubuntu安装monaco字体
+1. git clone https://github.com/cstrap/monaco-font
+2. cd /monaco-font
+3. 查看README.md执行命令 sudo ./install-font-ubuntu.sh https://github.com/todylu/monaco.ttf/blob/master/monaco.ttf?raw=true
+4. enjoy代表执行成功
