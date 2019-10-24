@@ -3,15 +3,15 @@ import {HashRouter as BaseRouter, Switch, Route, Redirect} from 'react-router-do
 
 
 import NotFound from '../pages/404/Notfound';
-// import App from '../pages/main/App';
+import App from '../pages/main/App';
 import LoginPage from '../pages/main/Login'; 
 
 const Router=()=>{
   return (
     <BaseRouter>
       <Switch>
-        <Route exact path='/' render={()=><Redirect to="/login" />} />
-        <Route exact path='/login' component={LoginPage} />
+        <Route exact path='/' render={()=><Redirect to="/App" />} />
+        <Route exact path='/login' component={App} />
 
         {/* 配置404page */}
         <Route path="/notFound" component={NotFound} />
