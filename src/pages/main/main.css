@@ -11,4 +11,12 @@
   margin-top: 140px;
   margin-left: auto;
   margin-right: auto;
+  padding: 30px;
+}
+.login-inputgrp{
+  display: block;
+  margin-bottom: 15px;
+}
+.login-inputgrp label{
+  display: block;
 }

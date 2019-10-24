@@ -98,3 +98,6 @@ npm init
 2. cd /monaco-font
 3. 查看README.md执行命令 sudo ./install-font-ubuntu.sh https://github.com/todylu/monaco.ttf/blob/master/monaco.ttf?raw=true
 4. enjoy代表执行成功
+
+5. linux用户自定义命令路径，cd /usr/local/bin
+6. 用户自定义安装包，cd /usr/local/application
