@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import http from '../services/CommonHttp';
-import Url from '../utils/Url';
+import http from '../../services/CommonHttp';
+import Url from '../../utils/Url';
 
-import './App.css'
+import './main.css'
 
 export default class App extends Component{
   constructor(props){
@@ -27,7 +27,7 @@ export default class App extends Component{
       <div>
         {/* my react webpack starter */}
         <input type="text" style={{display: 'block'}} placeholder="请输入用户名" />
-        <input type="text" style={{display: 'block', marginTop: 10}} placeholder="请输入密码" />
+        <input type="text" style={{display: 'block', marginTop: 10, marginBottom: 10}} placeholder="请输入密码" />
         <input type="button" onClick={()=>this.btnsubmitclick()} value="确定" />
       </div>
     )

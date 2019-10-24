@@ -17,6 +17,12 @@ const baseConfig={
     // path: path.resolve(process.cwd(), 'build'),
     filename: './js/bundle.[hash].js'
   },
+  resolve: {
+    alias: {
+      'src': path.resolve(__dirname, 'src')
+      // 'Utils': path.resolve(__dirname, 'src/utils')
+    }
+  },
   devServer: {
     contentBase: path.join(__dirname, "src"),
     hot: true,  // 热加载，可省略在package.json中配置
@@ -30,18 +36,16 @@ const baseConfig={
     // headers: { 'Access-Control-Allow-Origin': '*' },
     // webpack-dev-server使用http-proxy-middleware来实现跨域代理
     proxy: {
-      // '/api': {
-      //   target: 'http://127.0.0.1',
-      //   pathRewrite: {'^/api' : 'csm/api'},
-      //   // changeOrigin: true,     // target是域名的话，需要这个参数，
-      //   // secure: false,          // 设置支持https协议的代理
-      // }
       '/api': {
-        target: 'http://127.0.0.1:8000',
-        pathRewrite: {'^/api' : ''},
+        target: 'http://127.0.0.1',
+        pathRewrite: {'^/api' : 'csm/api'},
         // changeOrigin: true,     // target是域名的话，需要这个参数，
         // secure: false,          // 设置支持https协议的代理
       }
+      // '/api2': {
+      //   target: 'http://127.0.0.1:8000',
+      //   pathRewrite: {'^/api2' : ''}
+      // }
     }
   },
   module: {
